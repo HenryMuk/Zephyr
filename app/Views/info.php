@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas modi, esse numquam quaerat assumenda, iusto magni cumque quae iste nostrum amet suscipit corrupti obcaecati commodi nulla corporis illum nihil dolores.
+    Dance bien
 </body>
 </html>
