@@ -11,21 +11,7 @@ class Home extends BaseController
         $model_promotion = new PromotionModel();
 
 
-       $model_promotion -> delete(2);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return view('test');
+        return view('acceuil');
     }
 }
