@@ -30,6 +30,13 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/Home/profile', 'Home::profile');
+$routes->get('/Home/acceuil', 'Home::acceuil');
+$routes->get('/Home/basic_table', 'Home::basic_table');
+$routes->get('/Home/blank', 'Home::blank');
+$routes->get('/Home/map_google', 'Home::map_google');
+$routes->get('/Home/fontawesome', 'Home::fontawesome');
+$routes->get('/Home/file_not_find', 'Home::file_not_find');
 
 /*
  * --------------------------------------------------------------------
