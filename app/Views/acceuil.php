@@ -171,7 +171,7 @@
                                 class="btn d-grid btn-danger text-white" target="_blank">
                                 Upgrade to Pro</a>
                         </li>
-                    </ul>
+                    </ul>    
 
                 </nav>
                 <!-- End Sidebar navigation -->
