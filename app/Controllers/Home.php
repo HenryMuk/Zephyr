@@ -45,8 +45,8 @@ class Home extends BaseController
         return view("map-google");
     }
 
-    public function erreur()
+    public function file_not_find()
     {
-        return view("erreur");
+        return view("404");
     }
 }
