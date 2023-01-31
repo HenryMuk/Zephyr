@@ -8,16 +8,16 @@ class Home extends BaseController
 {
     public function index()
     {
-        $model_promotion = new PromotionModel();
+       
 
 
 
-        return view('acceuil');
+        return view("acceuil");
     }
 
     public function acceuil()
     {
-        return view("acceuil");
+        return view('acceuil');
     }
 
     public function profile()
@@ -30,19 +30,19 @@ class Home extends BaseController
         return view("blank");
     }
 
-    public function fontawesome()
+    Public function fontawesome()
     {
         return view("fontawesome");
     }
 
     public function basic_table()
     {
-        return view("basic_table");
+        return view("basic-table");
     }
 
     public function map_google()
     {
-        return view("map_google");
+        return view("map-google");
     }
 
     public function erreur()
