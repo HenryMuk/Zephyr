@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="<?=base_url()?>/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="<?=base_url()?>/css/style.min.css" rel="stylesheet">
+
+
+    <style>
+    label
+    {
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: 10px;
+    }
+    </style>
 </head>
 
 <body>
@@ -85,7 +95,7 @@
                         <li>
                             <a class="profile-pic" href="<?=base_url()?>/#">
                                 <img src="<?=base_url()?>/plugins/images/users/lecteur.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Zephyr</span></a>
+                                    class="img-circle"><span class="text-white font-medium">Zéphyr</span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -148,7 +158,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Accueil</h4>
+                        <h4 class="page-title">Etudiant</h4>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -159,43 +169,157 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Etudiant</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/etudiant.jpg" width="50px">
-                                </li>
-                                <li class="ms-auto"><span class="counter text-success">7</span></li>
-                            </ul>
+            <div class="container-fluid"> 
+
+
+            <!-- ajout d'un nouvel etudiant -->
+
+                <div class="row">
+                    <div class="col-lg-12 col-xlg-12 col-md-12">
+                        <div class="white-box">
+                        <h3 class="box-title">Ajout d'un nouvel etudiant</h3>
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                        <div class="row">
+
+                                        <label class="col-md-3 p-0">Nom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="nom"
+                                                class="form-control p-0 "> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+                                        <label for="example-email" class="col-md-3 p-0">Post-Nom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="postnom"
+                                                class="form-control p-0 " name="example-email"
+                                                id="example-email">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+                                        <label class="col-md-3 p-0">Prénom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="prenom" class="form-control p-0 ">
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+                                        <label class="col-sm-3">Genre</label>
+                                        <div class="col-sm-8 border-bottom">
+                                            <select name="genre" class="form-select shadow-none p-0  form-control-line">
+                                                <option value="M">M</option>
+                                                <option value="F">F</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                        <div class="row">
+                                        <label class="col-md-3 p-0">Date de naissance</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="date_naissance"
+                                                class="form-control p-0 ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+                                        <label class="col-md-3 p-0">Lieu de naissance</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="lieu_naissance"
+                                                class="form-control p-0 ">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+                                        <label class="col-sm-3">Promotion</label>
+
+                                        <div class="col-sm-8 border-bottom">
+                                            <select class="form-select shadow-none p-0  form-control-line">
+                                                <option value="1">Preparatoire</option>
+                                                <option value="2">L1</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12 d-flex justify-content-center" >
+                                            <button class="btn btn-success btn-lg text-white">Ajouter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
+                    <!-- Column -->
+                </div>
 
 
+            <!-- liste des etudiants -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Liste des etudiants</h3>
+                            <p class="text-muted">Add class <code>.table</code></p>
+                            <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">NOM</th>
+                                            <th class="border-top-0">POST-NOM</th>
+                                            <th class="border-top-0">PRENOM</th>
+                                            <th class="border-top-0">GENRE</th>
+                                            <th class="border-top-0">PROMOTION</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ngasa</td>
+                                            <td>Mungedi</td>
+                                            <td>Divine</td>
+                                            <td>F</td>
+                                            <td>L1</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Strategie</td>
+                                            <td>Milambo</td>
+                                            <td>Paul</td>
+                                            <td>M</td>
+                                            <td>L1</td>
+                                        </tr>
 
-
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Promotion</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/promotion.png" width="50px">
-                                </li>
-                                
-                                <li class="ms-auto"><span class="counter text-purple">5</span></li>
-                            </ul>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <footer class="footer text-center">2021 © Zephyr</a>
+            <footer class="footer text-center">2021 © Zéphyr</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

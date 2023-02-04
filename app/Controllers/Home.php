@@ -20,33 +20,15 @@ class Home extends BaseController
         return view('acceuil');
     }
 
-    public function profile()
+    public function etudiant()
     {
-        return view("profile");
+        return view("etudiant");
     }
 
-    public function blank()
+    public function promotion()
     {
-        return view("blank");
+        return view("promotion");
     }
 
-    Public function fontawesome()
-    {
-        return view("fontawesome");
-    }
-
-    public function basic_table()
-    {
-        return view("basic-table");
-    }
-
-    public function map_google()
-    {
-        return view("map-google");
-    }
-
-    public function file_not_find()
-    {
-        return view("404");
-    }
+    
 }
