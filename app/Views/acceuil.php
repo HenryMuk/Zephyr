@@ -188,7 +188,15 @@
                                     <img src="<?php base_url()?>/plugins/images/promotion.png" width="50px">
                                 </li>
                                 
-                                <li class="ms-auto"><span class="counter text-purple">5</span></li>
+                                <li class="ms-auto"><span class="counter text-purple">
+                                    <?php
+                                        if(isset($total_promotions)){
+                                            echo $total_promotions;
+                                        }
+                                        else 
+                                        echo 0;
+                                    ?>
+                                </span></li>
                             </ul>
                         </div>
                     </div>

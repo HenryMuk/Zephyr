@@ -187,6 +187,59 @@
                <?php
             }
 
+            else if(session()->get('success_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La modification de la promotion s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_delete') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La suppression de la promotion s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la suppression de la promotion !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+
+             else if(session()->get('error_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la modification de la promotion !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
             else if(session()->get('error') != NULL){?>
             
                 <div class="alert" alert-success>
@@ -204,14 +257,17 @@
 
             ?>
             
-            <!-- ajout d'un nouvel etudiant -->
+            <!-- ajout d'une nouvelle promotion -->
 
                 <div class="row">
                     <div class="col-lg-12 col-xlg-12 col-md-12">
                         <div class="white-box">
-                        <h3 class="box-title">Ajout d'une nouvelle promotion</h3>
+                        <h3 class="box-title">
+                            
+                        <?= isset($la_promotion) ? "Modification d'une promotion": "Ajout d'une promotion"  ?>
+                        </h3>
                             <div class="card-body">
-                                <form class="form-horizontal form-material" action="<?=base_url('Home/ajout_promotion')?>" method="post">
+                                <form class="form-horizontal form-material" action="<?=base_url('Home/'.(isset($la_promotion)? "enregistrer_modification_promotion/".$la_promotion['id'] : "ajout_promotion"))?>" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                         <div class="form-group mb-4">
@@ -219,7 +275,7 @@
 
                                         <label class="col-md-3 p-0">Intitule</label>
                                         <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="nom"
+                                            <input type="text" name="nom" value="<?= isset($la_promotion) ? $la_promotion['intitule'] : ''?>"
                                                 class="form-control p-0 "> 
                                             </div>
                                         </div>
@@ -229,7 +285,7 @@
                                     <div class="col-md-6">
                                     <div class="form-group mb-4">
                                         <div class="col-sm-12 d-flex" >
-                                            <button class="btn btn-success btn-lg text-white" type="submit">Ajouter</button>
+                                            <button class="btn btn-success btn-lg text-white" type="submit"><?= isset($la_promotion) ? "Modifier" : "Ajouter"?></button>
                                         </div>
                                     </div>
                                         
@@ -246,7 +302,7 @@
                 </div>
 
 
-            <!-- liste des etudiants -->
+            <!-- liste des promotions -->
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
@@ -258,10 +314,34 @@
                                         <tr>
                                             <th class="border-top-0">#</th>
                                             <th class="border-top-0">INTITULE</th>
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                       <?php
+
+                                       if(isset($promotions))
+                                       {
+                                        $i = 1;
+                                        foreach($promotions as $key => $promotion){ ?>
+                                        
+                                        <tr>
+                                            <td><?= $i ?></td>
+                                            <td><?= $promotion['intitule'] ?></td>
+                                            <td>
+                                            <a  href="<?=base_url('Home/modifier_promotion/'.$promotion['id'])?>"class="btn btn-primary btn-lg text-white">Modifier</a>
+                                            <a  href="<?=base_url('Home/supprimer_promotion/'.$promotion['id'])?>"class="btn btn-danger btn-lg text-white">Supprimer</a>
+                                            </td>
+                                        </tr>
+
+
+                                            <?php
+                                            $i++;
+                                        }
+                                        
+                                        
+                                       }
+                                       ?>
 
 
 
