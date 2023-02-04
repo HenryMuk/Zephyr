@@ -172,6 +172,38 @@
             <div class="container-fluid"> 
 
 
+            <?php
+
+            if(session()->get('success') != NULL){?>
+            
+               <div class="alert" alert-success>
+                <p>
+                    <Strong>Mise a jour</Strong>
+                    <hr>
+                    L'ajout de la promotion s'est effectué avec succès !
+                </p>
+
+               </div>
+               <?php
+            }
+
+            else if(session()->get('error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec d'ajout d'une nouvelle promotion !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+            
+
+
+            ?>
+            
             <!-- ajout d'un nouvel etudiant -->
 
                 <div class="row">
@@ -179,13 +211,13 @@
                         <div class="white-box">
                         <h3 class="box-title">Ajout d'une nouvelle promotion</h3>
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="<?=base_url('Home/ajout_promotion')?>" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                         <div class="form-group mb-4">
                                         <div class="row">
 
-                                        <label class="col-md-3 p-0">Nom</label>
+                                        <label class="col-md-3 p-0">Intitule</label>
                                         <div class="col-md-8 border-bottom p-0">
                                             <input type="text" name="nom"
                                                 class="form-control p-0 "> 
@@ -197,7 +229,7 @@
                                     <div class="col-md-6">
                                     <div class="form-group mb-4">
                                         <div class="col-sm-12 d-flex" >
-                                            <button class="btn btn-success btn-lg text-white">Ajouter</button>
+                                            <button class="btn btn-success btn-lg text-white" type="submit">Ajouter</button>
                                         </div>
                                     </div>
                                         
@@ -229,41 +261,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Preparatoire</td>
-                                            
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>2</td>
-                                            <td>L1</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>3</td>
-                                            <td>L2</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>4</td>
-                                            <td>L3</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>5</td>
-                                            <td>M1</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>6</td>
-                                            <td>M2</td>
-                                            
-                                        </tr>
+                                       
 
 
 

@@ -14,7 +14,7 @@ class promotionModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nom'];
+    protected $allowedFields = ['intitule'];
 
     // Dates
     protected $useTimestamps = true;

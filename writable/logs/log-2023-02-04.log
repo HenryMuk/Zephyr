@@ -1,0 +1,100 @@
+CRITICAL - 2023-02-04 16:10:00 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:10:34 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:11:49 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:12:22 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:14:10 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:14:23 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:14:28 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:14:40 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:17:30 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-04 16:17:43 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1706.
+ 1 SYSTEMPATH\BaseModel.php(742): CodeIgniter\BaseModel->transformDataToArray('$donnees', 'insert')
+ 2 SYSTEMPATH\Model.php(729): CodeIgniter\BaseModel->insert('$donnees', true)
+ 3 APPPATH\Controllers\Home.php(42): CodeIgniter\Model->insert('$donnees')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->ajout_promotion()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
