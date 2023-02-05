@@ -95,7 +95,7 @@
                         <li>
                             <a class="profile-pic" href="<?=base_url()?>/#">
                                 <img src="<?=base_url()?>/plugins/images/users/lecteur.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Zéphyr</span></a>
+                                    class="img-circle"><span class="text-white font-medium">Zephyr</span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -353,7 +353,7 @@
                 </div>
             </div>
             
-            <footer class="footer text-center">2021 © Zéphyr</a>
+            <footer class="footer text-center">2023 © Zephyr</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

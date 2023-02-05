@@ -95,7 +95,7 @@
                         <li>
                             <a class="profile-pic" href="<?=base_url()?>/#">
                                 <img src="<?=base_url()?>/plugins/images/users/lecteur.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Zéphyr</span></a>
+                                    class="img-circle"><span class="text-white font-medium">Zephyr</span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -172,100 +172,218 @@
             <div class="container-fluid"> 
 
 
-            <!-- ajout d'un nouvel etudiant -->
+            <?php
+
+            if(session()->get('success') != NULL){?>
+            
+               <div class="alert" alert-success>
+                <p>
+                    <Strong>Mise a jour</Strong>
+                    <hr>
+                    L'ajout de la etudiant s'est effectué avec succès !
+                </p>
+
+               </div>
+               <?php
+            }
+
+            else if(session()->get('success_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La modification de la etudiant s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_delete') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La suppression de la etudiant s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la suppression de la etudiant !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+
+             else if(session()->get('error_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la modification de la etudiant !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+            else if(session()->get('error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec d'ajout d'une nouvelle etudiant !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+            
+
+
+            ?>
+            
+            <!-- ajout d'une nouvelle etudiant -->
 
                 <div class="row">
                     <div class="col-lg-12 col-xlg-12 col-md-12">
                         <div class="white-box">
-                        <h3 class="box-title">Ajout d'un nouvel etudiant</h3>
+                        <h3 class="box-title">
+                            
+                        <?= isset($l_etudiant) ? "Modification d'une etudiant": "Ajout d'une etudiant"  ?>
+                        </h3>
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="<?=base_url('Home/'.(isset($l_etudiant)? "enregistrer_modification_etudiant/".$l_etudiant['id'] : "ajout_etudiant"))?>" method="post">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                        <div class="form-group mb-4">
-                                        <div class="row">
+                                
+                                    <div class= "col-md-6">
+                                        
+                                    <div class="form-group mb-4">
+                                    <div class="row">
 
                                         <label class="col-md-3 p-0">Nom</label>
                                         <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="nom"
+                                            <input type="text" name="nom" value="<?= isset($l_etudiant) ? $l_etudiant['nom'] : ''?>"
                                                 class="form-control p-0 "> 
-                                            </div>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Post-Nom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="postnom" value="<?= isset($l_etudiant) ? $l_etudiant['postnom'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Prenom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="prenom" value="<?= isset($l_etudiant) ? $l_etudiant['prenom'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Genre</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <select input type="text" name="genre" value="<?= isset($l_etudiant) ? $l_etudiant['genre'] : ''?>"
+                                                class="form-control p-0 ">
+                                                <option>M</option> 
+                                                <option>F</option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    </div>
+
+                                    <div class= "col-md-6">
                                         
-                                    </div>
                                     <div class="form-group mb-4">
                                     <div class="row">
-                                        <label for="example-email" class="col-md-3 p-0">Post-Nom</label>
-                                        <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="postnom"
-                                                class="form-control p-0 " name="example-email"
-                                                id="example-email">
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                    <div class="row">
-                                        <label class="col-md-3 p-0">Prénom</label>
-                                        <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="prenom" class="form-control p-0 ">
-                                        </div>
-                                    </div>
-                                    </div>
 
-                                    <div class="form-group mb-4">
-                                    <div class="row">
-                                        <label class="col-sm-3">Genre</label>
-                                        <div class="col-sm-8 border-bottom">
-                                            <select name="genre" class="form-select shadow-none p-0  form-control-line">
-                                                <option value="M">M</option>
-                                                <option value="F">F</option>
-                                                
+                                        <label class="col-md-3 p-0">Promotion</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <select input type="text" name="promotion" value="<?= isset($l_etudiant) ? $l_etudiant['promotion'] : ''?>"
+                                                class="form-control p-0 ">
+                                                <option>Preparatoire</option> 
+                                                <option>L1</option>
                                             </select>
                                         </div>
                                     </div>
-                                    </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                        <div class="form-group mb-4">
-                                        <div class="row">
-                                        <label class="col-md-3 p-0">Date de naissance</label>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Date de naissance (Annees/Mois/Jour)</label>
                                         <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="date_naissance"
-                                                class="form-control p-0 ">
+                                            <input type="text" name="date_naissance" value="<?= isset($l_etudiant) ? $l_etudiant['date_naissance'] : ''?>"
+                                                class="form-control p-0 "> 
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Lieu_naissance</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="lieu_naissance" value="<?= isset($l_etudiant) ? $l_etudiant['lieu_naissance'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
                                     </div>
 
-                                    <div class="form-group mb-4">
-                                    <div class="row">
-                                        <label class="col-md-3 p-0">Lieu de naissance</label>
-                                        <div class="col-md-8 border-bottom p-0">
-                                            <input type="text" name="lieu_naissance"
-                                                class="form-control p-0 ">
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                    <div class="row">
-                                        <label class="col-sm-3">Promotion</label>
 
-                                        <div class="col-sm-8 border-bottom">
-                                            <select class="form-select shadow-none p-0  form-control-line">
-                                                <option value="1">Preparatoire</option>
-                                                <option value="2">L1</option>
-                                                
-                                            </select>
+                                 
+
+                                
+
+
+                                        
+                                        
+                                   
+                                    
+                                    
+                                    
+                                        
+                                        <div class="col-sm-12 d-flex" >
+                                            <button class="btn btn-success btn-lg text-white" type="submit"><?= isset($l_etudiant) ? "Modifier" : "Ajouter"?></button>
                                         </div>
-                                    </div>
-                                        </div>
+                                   
+                                        
                                     </div>
                                     </div>
 
                                     
-                                    <div class="form-group mb-4">
-                                        <div class="col-sm-12 d-flex justify-content-center" >
-                                            <button class="btn btn-success btn-lg text-white">Ajouter</button>
-                                        </div>
-                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -290,26 +408,47 @@
                                             <th class="border-top-0">PRENOM</th>
                                             <th class="border-top-0">GENRE</th>
                                             <th class="border-top-0">PROMOTION</th>
+                                            <th class="border-top-0">DATE DE NAISSANCE</th>
+                                            <th class="border-top-0">LIEU DE NAISSANCE</th>
+                                            
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Ngasa</td>
-                                            <td>Mungedi</td>
-                                            <td>Divine</td>
-                                            <td>F</td>
-                                            <td>L1</td>
-                                        </tr>
+                                       <?php
+
+                                       if(isset($etudiants))
+                                       {
+                                        $i = 1;
+                                        foreach($etudiants as $key => $etudiant){ ?>
                                         
                                         <tr>
-                                            <td>2</td>
-                                            <td>Strategie</td>
-                                            <td>Milambo</td>
-                                            <td>Paul</td>
-                                            <td>M</td>
-                                            <td>L1</td>
+                                            <td><?= $i ?></td>
+                                            <td><?= $etudiant['nom'] ?></td>
+                                            <td><?= $etudiant['postnom'] ?></td>
+                                            <td><?= $etudiant['prenom'] ?></td>
+                                            <td><?= $etudiant['genre'] ?></td>
+                                            <td><?= $etudiant['promotion'] ?></td>
+                                            <td><?= $etudiant['date_naissance'] ?></td>
+                                            <td><?= $etudiant['lieu_naissance'] ?></td>
+                                            
+                                            <td>
+                                            <a  href="<?=base_url('Home/modifier_etudiant/'.$etudiant['id'])?>"class="btn btn-primary btn-lg text-white">Modifier</a>
+                                            <a  href="<?=base_url('Home/supprimer_etudiant/'.$etudiant['id'])?>"class="btn btn-danger btn-lg text-white">Supprimer</a>
+                                            </td>
                                         </tr>
+                                        
+
+
+                                            <?php
+                                            $i++;
+                                        }
+                                        
+                                        
+                                       }
+                                       ?>
+
+
 
                                     </tbody>
                                 </table>
@@ -319,7 +458,7 @@
                 </div>
             </div>
             
-            <footer class="footer text-center">2021 © Zéphyr</a>
+            <footer class="footer text-center">2023 © Zephyr</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

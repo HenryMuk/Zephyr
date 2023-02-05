@@ -166,12 +166,20 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Etudiant</h3>
+                            <h3 class="box-title">Etudiants</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <img src="<?php base_url()?>/plugins/images/etudiant.jpg" width="50px">
                                 </li>
-                                <li class="ms-auto"><span class="counter text-success">7</span></li>
+                                <li class="ms-auto"><span class="counter text-success">
+                                <?php
+                                        if(isset($total_etudiants)){
+                                            echo $total_etudiants;
+                                        }
+                                        else 
+                                        echo 0;
+                                    ?>
+                                </span></li>
                             </ul>
                         </div>
                     </div>
@@ -181,7 +189,7 @@
 
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Promotion</h3>
+                            <h3 class="box-title">Promotions</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 
                                 <li>
@@ -203,7 +211,7 @@
                 </div>
             </div>
             
-            <footer class="footer text-center">2021 © Zephyr</a>
+            <footer class="footer text-center">2023 © Zephyr</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
