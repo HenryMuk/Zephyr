@@ -108,27 +108,12 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/acceuil"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/port"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Accueil</span>
+                                <span class="hide-menu">Port</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_etudiants"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des etudiants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_professeurs"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des professeurs</span>
-                            </a>
-                        </li>
-                        
                  </ul>    
 
                 </nav>
@@ -149,7 +134,9 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Accueil</h4>
+                        <h4 class="page-title">Inscription</h4>
+                        <p></p>
+                        <h5 class="page-title">Dites nous plus sur vous , vous etes :</h5>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -165,21 +152,22 @@
                 <!-- Three charts -->
                 <!-- ============================================================== -->
                 <div class="row justify-content-center">
+                    
                     <div class="col-lg-4 col-md-12">
+                    
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Etudiants</h3>
+                        <a  href="<?=base_url()?>/Home/etudiant">
+                            <h3 class="box-title">Etudiant</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            
                                 <li>
                                     <img src="<?php base_url()?>/plugins/images/etudiant.jpg" width="50px">
+                                    
+                                
                                 </li>
+                                
                                 <li class="ms-auto"><span class="counter text-success">
-                                <?php
-                                        if(isset($total_etudiants)){
-                                            echo $total_etudiants;
-                                        }
-                                        else 
-                                        echo 0;
-                                    ?>
+                               
                                 </span></li>
                             </ul>
                         </div>
@@ -190,25 +178,56 @@
 
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Promotions</h3>
+                        <a  href="<?=base_url()?>/Home/professeur">
+                            <h3 class="box-title">Professeur</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                
+                            
                                 <li>
-                                    <img src="<?php base_url()?>/plugins/images/promotion.png" width="50px">
+                                    <img src="<?php base_url()?>/plugins/images/professor.jpg" width="50px">
                                 </li>
                                 
                                 <li class="ms-auto"><span class="counter text-purple">
-                                    <?php
-                                        if(isset($total_promotions)){
-                                            echo $total_promotions;
-                                        }
-                                        else 
-                                        echo 0;
-                                    ?>
+                                   
                                 </span></li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                        <a  href="<?=base_url()?>/Home/professeur">
+                            <h3 class="box-title">Chef de Travaux</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            
+                                <li>
+                                    <img src="<?php base_url()?>/plugins/images/CT.png" width="50px">
+                                </li>
+                                
+                                <li class="ms-auto"><span class="counter text-purple">
+                                   
+                                </span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                        <a  href="<?=base_url()?>/Home/professeur">
+                            <h3 class="box-title">Assistant</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            
+                                <li>
+                                    <img src="<?php base_url()?>/plugins/images/assisstant.png" width="50px">
+                                </li>
+                                
+                                <li class="ms-auto"><span class="counter text-purple">
+                                   
+                                </span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
             

@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="<?=base_url()?>/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="<?=base_url()?>/css/style.min.css" rel="stylesheet">
+
+
+    <style>
+    label
+    {
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: 10px;
+    }
+    </style>
 </head>
 
 <body>
@@ -114,20 +124,6 @@
                                 <span class="hide-menu">Accueil</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_etudiants"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des etudiants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_professeurs"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des professeurs</span>
-                            </a>
-                        </li>
                         
                  </ul>    
 
@@ -149,7 +145,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Accueil</h4>
+                        <h4 class="page-title">Professeurs</h4>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -160,53 +156,158 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Etudiants</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/etudiant.jpg" width="50px">
-                                </li>
-                                <li class="ms-auto"><span class="counter text-success">
-                                <?php
-                                        if(isset($total_etudiants)){
-                                            echo $total_etudiants;
+            <div class="container-fluid"> 
+
+
+            <?php
+
+            if(session()->get('success') != NULL){?>
+            
+               <div class="alert" alert-success>
+                <p>
+                    <Strong>Mise a jour</Strong>
+                    <hr>
+                    L'ajout de la professeur s'est effectué avec succès !
+                </p>
+
+               </div>
+               <?php
+            }
+
+            else if(session()->get('success_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La modification de la professeur s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_delete') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La suppression de la professeur s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la suppression de la professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+
+             else if(session()->get('error_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la modification de la professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+            else if(session()->get('error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec d'ajout d'une nouvelle professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+            
+
+
+            ?>
+            
+            <!-- ajout d'une nouvelle professeur -->
+
+                
+
+
+            <!-- liste des professeurs -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Liste des professeurs</h3>
+                            <p class="text-muted">Add class <code>.table</code></p>
+                            <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">NOM</th>
+                                            <th class="border-top-0">POST-NOM</th>
+                                            <th class="border-top-0">PRENOM</th>
+                                            <th class="border-top-0">GENRE</th>
+                                            <th class="border-top-0">COURS</th>
+                                            
+                                            
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+
+                                       if(isset($professeurs))
+                                       {
+                                        $i = 1;
+                                        foreach($professeurs as $key => $professeur){ ?>
+                                        
+                                        <tr>
+                                            <td><?= $i ?></td>
+                                            <td><?= $professeur['nom'] ?></td>
+                                            <td><?= $professeur['postnom'] ?></td>
+                                            <td><?= $professeur['prenom'] ?></td>
+                                            <td><?= $professeur['genre'] ?></td>
+                                            <td><?= $professeur['cours'] ?></td>
+                                            
+                                            
+                                            <td>
+                                            <a  href="<?=base_url('Home/modifier_professeur/'.$professeur['id'])?>"class="btn btn-primary btn-lg text-white">Modifier</a>
+                                            <a  href="<?=base_url('Home/supprimer_professeur/'.$professeur['id'])?>"class="btn btn-danger btn-lg text-white">Supprimer</a>
+                                            </td>
+                                        </tr>
+                                        
+
+
+                                            <?php
+                                            $i++;
                                         }
-                                        else 
-                                        echo 0;
-                                    ?>
-                                </span></li>
-                            </ul>
-                        </div>
-                    </div>
+                                        
+                                        
+                                       }
+                                       ?>
 
 
 
-
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Promotions</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/promotion.png" width="50px">
-                                </li>
-                                
-                                <li class="ms-auto"><span class="counter text-purple">
-                                    <?php
-                                        if(isset($total_promotions)){
-                                            echo $total_promotions;
-                                        }
-                                        else 
-                                        echo 0;
-                                    ?>
-                                </span></li>
-                            </ul>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

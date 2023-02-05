@@ -118,26 +118,13 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/acceuil"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/port"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Accueil</span>
+                                <span class="hide-menu">Port</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/etudiant"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Etudiant</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/promotion"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Promotion</span>
-                            </a>
-                        </li>
+                        
                  </ul>    
 
                 </nav>
@@ -393,69 +380,7 @@
 
 
             <!-- liste des etudiants -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Liste des etudiants</h3>
-                            <p class="text-muted">Add class <code>.table</code></p>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">NOM</th>
-                                            <th class="border-top-0">POST-NOM</th>
-                                            <th class="border-top-0">PRENOM</th>
-                                            <th class="border-top-0">GENRE</th>
-                                            <th class="border-top-0">PROMOTION</th>
-                                            <th class="border-top-0">DATE DE NAISSANCE</th>
-                                            <th class="border-top-0">LIEU DE NAISSANCE</th>
-                                            
-                                            <th class="border-top-0">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php
-
-                                       if(isset($etudiants))
-                                       {
-                                        $i = 1;
-                                        foreach($etudiants as $key => $etudiant){ ?>
-                                        
-                                        <tr>
-                                            <td><?= $i ?></td>
-                                            <td><?= $etudiant['nom'] ?></td>
-                                            <td><?= $etudiant['postnom'] ?></td>
-                                            <td><?= $etudiant['prenom'] ?></td>
-                                            <td><?= $etudiant['genre'] ?></td>
-                                            <td><?= $etudiant['promotion'] ?></td>
-                                            <td><?= $etudiant['date_naissance'] ?></td>
-                                            <td><?= $etudiant['lieu_naissance'] ?></td>
-                                            
-                                            <td>
-                                            <a  href="<?=base_url('Home/modifier_etudiant/'.$etudiant['id'])?>"class="btn btn-primary btn-lg text-white">Modifier</a>
-                                            <a  href="<?=base_url('Home/supprimer_etudiant/'.$etudiant['id'])?>"class="btn btn-danger btn-lg text-white">Supprimer</a>
-                                            </td>
-                                        </tr>
-                                        
-
-
-                                            <?php
-                                            $i++;
-                                        }
-                                        
-                                        
-                                       }
-                                       ?>
-
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             
             <footer class="footer text-center">2023 © Zephyr</a>

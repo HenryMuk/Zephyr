@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="<?=base_url()?>/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="<?=base_url()?>/css/style.min.css" rel="stylesheet">
+
+
+    <style>
+    label
+    {
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: 10px;
+    }
+    </style>
 </head>
 
 <body>
@@ -108,24 +118,10 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/acceuil"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/port"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Accueil</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_etudiants"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des etudiants</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>/Home/liste_professeurs"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Liste des professeurs</span>
+                                <span class="hide-menu">Port</span>
                             </a>
                         </li>
                         
@@ -149,7 +145,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Accueil</h4>
+                        <h4 class="page-title">Professeur</h4>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -160,56 +156,207 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Etudiants</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/etudiant.jpg" width="50px">
-                                </li>
-                                <li class="ms-auto"><span class="counter text-success">
-                                <?php
-                                        if(isset($total_etudiants)){
-                                            echo $total_etudiants;
-                                        }
-                                        else 
-                                        echo 0;
-                                    ?>
-                                </span></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="container-fluid"> 
 
 
+            <?php
 
+            if(session()->get('success') != NULL){?>
+            
+               <div class="alert" alert-success>
+                <p>
+                    <Strong>Mise a jour</Strong>
+                    <hr>
+                    L'ajout de la professeur s'est effectué avec succès !
+                </p>
 
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Promotions</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                
-                                <li>
-                                    <img src="<?php base_url()?>/plugins/images/promotion.png" width="50px">
-                                </li>
-                                
-                                <li class="ms-auto"><span class="counter text-purple">
-                                    <?php
-                                        if(isset($total_promotions)){
-                                            echo $total_promotions;
-                                        }
-                                        else 
-                                        echo 0;
-                                    ?>
-                                </span></li>
-                            </ul>
-                        </div>
-                    </div>
+               </div>
+               <?php
+            }
+
+            else if(session()->get('success_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La modification de la professeur s'est effectuée avec succès !
+                 </p>
+ 
                 </div>
+                <?php
+             }
+
+             else if(session()->get('success_delete') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     La suppression de la professeur s'est effectuée avec succès !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+             else if(session()->get('success_error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la suppression de la professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+
+             else if(session()->get('error_update') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec de la modification de la professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+
+            else if(session()->get('error') != NULL){?>
+            
+                <div class="alert" alert-success>
+                 <p>
+                     <Strong>Mise a jour</Strong>
+                     <hr>
+                     Echec d'ajout d'une nouvelle professeur !
+                 </p>
+ 
+                </div>
+                <?php
+             }
+            
+
+
+            ?>
+            
+            <!-- ajout d'une nouvelle professeur -->
+
+                <div class="row">
+                    <div class="col-lg-12 col-xlg-12 col-md-12">
+                        <div class="white-box">
+                        <h3 class="box-title">
+                            
+                        <?= isset($le_professeur) ? "Modification d'une professeur": "Ajout d'une professeur"  ?>
+                        </h3>
+                            <div class="card-body">
+                                <form class="form-horizontal form-material" action="<?=base_url('Home/'.(isset($le_professeur)? "enregistrer_modification_professeur/".$le_professeur['id'] : "ajout_professeur"))?>" method="post">
+                                    <div class="row">
+                                
+                                    <div class= "col-md-6">
+                                        
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Nom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="nom" value="<?= isset($le_professeur) ? $le_professeur['nom'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Post-Nom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="postnom" value="<?= isset($le_professeur) ? $le_professeur['postnom'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Prenom</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <input type="text" name="prenom" value="<?= isset($le_professeur) ? $le_professeur['prenom'] : ''?>"
+                                                class="form-control p-0 "> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Genre</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                            <select input type="text" name="genre" value="<?= isset($le_professeur) ? $le_professeur['genre'] : ''?>"
+                                                class="form-control p-0 ">
+                                                <option>M</option> 
+                                                <option>F</option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    </div>
+
+                                    <div class= "col-md-6">
+                                        
+                                    <div class="form-group mb-4">
+                                    <div class="row">
+
+                                        <label class="col-md-3 p-0">Cours</label>
+                                        <div class="col-md-8 border-bottom p-0">
+                                        <input type="text" name="cours" value="<?= isset($le_professeur) ? $le_professeur['cours'] : ''?>"
+                                                class="form-control p-0 "> 
+                                               
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </div>
+                            
+
+                                 
+
+                                
+
+
+                                        
+                                        
+                                   
+                                    
+                                    
+                                    
+                                        
+                                        <div class="col-sm-12 d-flex" >
+                                            <button class="btn btn-success btn-lg text-white" type="submit"><?= isset($le_professeur) ? "Modifier" : "Ajouter"?></button>
+                                        </div>
+                                   
+                                        
+                                    </div>
+                                    </div>
+
+                                    
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+
+
+            <!-- liste des professeurs -->
+                
             </div>
             
             <footer class="footer text-center">2023 © Zephyr</a>
